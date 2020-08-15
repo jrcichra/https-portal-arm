@@ -1,6 +1,6 @@
 ARG  DIST=nginx:1.17.3
 FROM $DIST
-ARG  ARCH=amd64
+ARG  ARCH=armhf
 
 # Delete sym links from nginx image, install logrotate
 RUN rm /var/log/nginx/access.log && \
