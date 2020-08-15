@@ -18,7 +18,7 @@ docker buildx inspect --bootstrap
 # Phase 2 - sign in
 echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin 
 # Phase 3 - build a container based on the arg passed in
-docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t jrcichra/https-portal:${GITHUB_SHA:0:8} --push .
+docker buildx build --platform linux/arm/v7 -t jrcichra/https-portal:${GITHUB_SHA:0:8} --push .
 docker buildx imagetools inspect jrcichra/https-portal:${GITHUB_SHA:0:8}
-docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t jrcichra/https-portal:latest --push .
+docker buildx build --platform linux/arm/v7 -t jrcichra/https-portal:latest --push .
 docker buildx imagetools inspect jrcichra/https-portal:latest
